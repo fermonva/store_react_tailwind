@@ -45,3 +45,5 @@ This will start the development server. Open http://localhost:5173 in your brows
 └── README.md          # Project documentation
 ```
 Feel free to modify the project structure based on your preferences.
+
+<image src="./public/img/web_store.jpeg" alt="Descripción de la imagen">
