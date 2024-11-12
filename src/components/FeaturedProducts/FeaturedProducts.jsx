@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { Card } from "../index";
 
 export const FeaturedProducts = ({ type }) => {
@@ -49,7 +49,7 @@ export const FeaturedProducts = ({ type }) => {
       try {
         // setLoading(true);
         const res = await axios.get(
-          import.meta.env.VITE_REACT_APP_API_URL + "/products",
+          `${import.meta.env.VITE_REACT_APP_API_URL}/products`,
           {
             // params: {
             //   populate: "*",
@@ -83,26 +83,24 @@ export const FeaturedProducts = ({ type }) => {
     error,
   } = `/products?populate=*&[filters][type][$eq]=${type}`;
   return (
-    <div className="featuredProducts py-2">
-      <div className="flex flex-col text-center">
-        <h1 className="text-5xl font-bold w-full py-2 text-gray-800">
-          {type} products
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas.
-        </p>
-      </div>
-      <div className="flex gap-5 py-10 justify-center">
+    <section className="grid mt-4 mb-4">
+      <h1 className="text-5xl font-bold w-full py-2 text-gray-800">
+        {type} products
+      </h1>
+      <p className="justify-center text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+        suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+        lacus vel facilisis labore et dolore magna aliqua. Quis ipsum
+        suspendisse ultrices gravida. Risus commodo viverra maecenas.
+      </p>
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-6 mt-4">
         {error && <p className="text-red-500">Something went wrong!</p>}
         {loading && <p className="text-gray-500">loading...</p>}
         {!loading &&
           !error &&
           data?.map((item) => <Card item={item} key={item.id} />)}
       </div>
-    </div>
+    </section>
   );
 };

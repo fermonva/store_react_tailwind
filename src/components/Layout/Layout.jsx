@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { Navbar, Footer } from "../index";
+import { Footer, Navbar } from "../index";
 
 export const Layout = () => {
   return (
     <div className="flex flex-col">
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
       <Footer />
     </div>

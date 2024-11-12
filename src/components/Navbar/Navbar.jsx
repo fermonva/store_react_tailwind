@@ -1,14 +1,14 @@
-import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Cart } from "../Cart/Cart";
 import {
   Bars3Icon,
   BellIcon,
-  XMarkIcon,
-  MagnifyingGlassIcon,
   HeartIcon,
+  MagnifyingGlassIcon,
   ShoppingCartIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { Fragment, useState } from "react";
+import { Cart } from "../Cart/Cart";
 
 const user = {
   name: "Tom Cook",
@@ -219,7 +219,7 @@ export const Navbar = () => {
               </div>
 
               <Disclosure.Panel className="md:hidden">
-                <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3"></div>
+                <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3" />
                 <div className="border-t border-gray-700 pb-3 pt-4">
                   <div className="flex items-center px-5">
                     <div className="flex-shrink-0">
